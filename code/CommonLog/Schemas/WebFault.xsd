@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/Account/SharedResources/Schemas/WebFault.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/Account/SharedResources/Schemas/WebFault.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace"/>
+	<xs:element name="fault">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="faultCode" type="xs:string" minOccurs="0"/>
+				<xs:element name="faultString" type="xs:string" minOccurs="0"/>
+				<xs:element name="faultActor" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

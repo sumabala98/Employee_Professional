@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/Profession" elementFormDefault="qualified" targetNamespace="http://www.example.org/Profession">
+
+    
+
+    
+    <complexType name="ProfessionalDetails_ReqType">
+    	<sequence>
+    		<element maxOccurs="1" minOccurs="0" name="First_Name"
+    			type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="0" name="Last_Name"
+    			type="string" />
+    		<element maxOccurs="1" minOccurs="0" name="Email_ID"
+    			type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="0" name="Designation"
+    			type="string">
+    		</element>
+
+
+    		<element maxOccurs="1" minOccurs="0" name="DateOFJoining"
+    			type="date">
+    		</element>
+            <element name="Department" type="string" maxOccurs="1" minOccurs="1"></element>
+            <element name="ReportingTo" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <element name="Emp_Professional_Res" type="tns:Emp_Professional_ResType">
+    </element>
+    
+    <complexType name="Emp_Professional_ResType">
+    	<sequence>
+    		<element maxOccurs="1" minOccurs="0" name="Res_Message" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="Res_Code" type="string"/>
+    	</sequence>
+    </complexType>
+
+    <element name="ProfessionalDetails_Req" type="tns:ProfessionalDetails_ReqType">
+    </element>
+
+    <element name="Profession" type="tns:ProfessionType"></element>
+    
+    <complexType name="ProfessionType">
+    	<sequence>
+    		<element name="EMP_ID" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="ProfessionDetails"
+    			type="tns:ProfessionalDetails_ReqType">
+    		</element>
+    	</sequence>
+    </complexType>
+</schema>

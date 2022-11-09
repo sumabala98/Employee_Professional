@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Insurance" xmlns:tns="http://www.example.org/Insurance" elementFormDefault="qualified">
+
+    <element name="InsuranceDetails" type="tns:InsuranceDetailsType"></element>
+    
+
+    <complexType name="InsuranceDetailsType">
+    	<sequence>
+    		<element name="FirstName" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="LastName" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Insurance_Name" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="DateOfJoining" type="date" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Benefits" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="Insurance" type="tns:InsuranceType"></element>
+    
+    <complexType name="InsuranceType">
+    	<sequence>
+    		<element name="Emp_ID" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="Emp_Insurance"
+    			type="tns:InsuranceDetailsType">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <element name="Res_Insurance" type="tns:Res_InsuranceType"></element>
+    
+    <complexType name="Res_InsuranceType">
+    	<sequence>
+    		<element name="Res_Message" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Res_code" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

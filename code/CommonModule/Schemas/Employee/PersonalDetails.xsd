@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/PersonalDetails" xmlns:tns="http://www.example.org/PersonalDetails" elementFormDefault="qualified" xmlns:Q1="http://www.example.org/AddressDetails">
+
+    
+
+    <complexType name="Emp_PersonalDetailsType">
+    	<sequence>
+    		<element name="FirstName" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="LastName" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="Email_ID" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="Gender" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="State" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Country" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="DateOfBirth" type="date" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+
+    <element name="Emp_Details_Res" type="tns:Emp_Details_ResType"></element>
+    
+    <complexType name="Emp_Details_ResType">
+    	<sequence>
+    		<element name="Res_Message" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Res_Code" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="PeronalDetails" type="tns:PersonalDetailsType"></element>
+    
+    <complexType name="PersonalDetailsType">
+    	<sequence>
+    		<element name="EMP_ID" maxOccurs="1" minOccurs="1" type="int">
+    		</element>
+    		<element name="Emp_Personal"
+    			type="tns:Emp_PersonalDetailsType">
+    		</element>
+    	</sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/CommonLogger/SharedResources/Schema/CommonLog.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/CommonLogger/SharedResources/Schema/CommonLog.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="ErrorDetails" type="ErrorDetailsType"/>
+	<xs:complexType name="ErrorDetailsType">
+		<xs:sequence>
+			<xs:element name="ErrorCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="ErrorPattern" type="xs:string" minOccurs="0"/>
+			<xs:element name="Error_Message" type="xs:string" minOccurs="0"/>
+			<xs:element name="Stacktrace" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LogDetailsType">
+		<xs:sequence>
+			<xs:element ref="ErrorDetails" minOccurs="0"/>
+			<xs:element name="Payload" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Simple" type="xs:string" minOccurs="0"/>
+						<xs:element name="Complex" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:any namespace="##any" processContents="lax" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LogHeaderType">
+		<xs:sequence>
+			<xs:element name="Correlation_Id" type="xs:string" minOccurs="0"/>
+			<xs:element name="Application_Name" type="xs:string" minOccurs="0"/>
+			<xs:element name="Process_Name" type="xs:string" minOccurs="0"/>
+			<xs:element name="Activity_Name" type="xs:string" minOccurs="0"/>
+			<xs:element name="LogType" type="xs:string" maxOccurs="1" minOccurs="0"/>
+			<xs:element name="Message_Type" type="xs:string" minOccurs="0"/>
+			<xs:element name="Status" type="xs:string" minOccurs="0"/>
+			<xs:element name="Timestamp" type="xs:string" maxOccurs="1" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="LogEnvelope">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="LogHeader"/>
+				<xs:element ref="LogDetails" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LogHeader" type="LogHeaderType"/>
+	<xs:element name="LogDetails" type="LogDetailsType"/>
+</xs:schema>

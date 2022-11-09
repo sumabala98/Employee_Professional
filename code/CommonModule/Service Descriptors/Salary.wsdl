@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:extns="http://www.example.org/Salary" xmlns:tns="http://www.example.org/wsdl/1667277757021" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SubProcess" targetNamespace="http://www.example.org/wsdl/1667277757021">
+  <wsdl:import namespace="http://www.example.org/Salary"/>
+  <wsdl:message name="Salary">
+    <wsdl:part element="extns:Salary" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="operationResponse">
+    <wsdl:part element="extns:Salary_Response" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="SubProcess">
+    <wsdl:operation name="operation">
+      <wsdl:input message="tns:Salary" name="operationinput"/>
+      <wsdl:output message="tns:operationResponse" name="operationoutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

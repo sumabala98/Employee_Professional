@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Salary" xmlns:tns="http://www.example.org/Salary" elementFormDefault="qualified">
+
+    <element name="SalaryDetails" type="tns:SalaryDetailsType"></element>
+    
+    <complexType name="SalaryDetailsType">
+    	<sequence>
+    		<element name="Salary" type="int" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Title" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="From_Date" type="date" maxOccurs="1" minOccurs="0"></element>
+    		<element name="To_Date" type="date" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="Salary" type="tns:SalaryType"></element>
+    
+
+    <element name="Salary_Response" type="tns:Salary_ResponseType"></element>
+    
+    <complexType name="Salary_ResponseType">
+    	<sequence>
+    		<element name="Res_Message" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Res_Code" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="SalaryType">
+    	<sequence>
+    		<element name="EMP_ID" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="SalaryDetails"
+    			type="tns:SalaryDetailsType" maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+</schema>

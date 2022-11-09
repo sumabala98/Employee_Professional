@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://www.tibco.com/schemas/Account/SharedResources/Schemas/BeanResponse.xsd"
+	 targetNamespace="http://www.tibco.com/schemas/Account/SharedResources/Schemas/BeanResponse.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace"/>
+	<xs:element name="BeanResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BeanFaultCode" minOccurs="0"/>
+				<xs:element ref="BeanFaultName" minOccurs="0"/>
+				<xs:element ref="BeanFaultMessage"/>
+				<xs:element ref="BeanExitState"/>
+				<xs:element ref="EmailRequired" minOccurs="0"/>
+				<xs:element ref="EmailLimit" minOccurs="0"/>
+				<xs:element ref="EmailAddress" minOccurs="0"/>
+				<xs:element ref="PageRequired" minOccurs="0"/>
+				<xs:element ref="PageLimit" minOccurs="0"/>
+				<xs:element ref="PageAddress" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BeanResponses">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BeanResponse" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BeanFaultCode" type="xs:string"/>
+	<xs:element name="BeanFaultName" type="xs:string"/>
+	<xs:element name="BeanFaultMessage" type="xs:string"/>
+	<xs:element name="BeanExitState" type="xs:string"/>
+	<xs:element name="EmailRequired" type="xs:boolean"/>
+	<xs:element name="EmailLimit" type="xs:integer"/>
+	<xs:element name="EmailAddress" type="xs:string"/>
+	<xs:element name="PageRequired" type="xs:boolean"/>
+	<xs:element name="PageLimit" type="xs:integer"/>
+	<xs:element name="PageAddress" type="xs:string"/>
+
+	<xs:element name="root" type="rootType"></xs:element>
+
+	<xs:complexType name="rootType">
+		<xs:sequence>
+			<xs:element name="BeanFaultCode" type="xs:string"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

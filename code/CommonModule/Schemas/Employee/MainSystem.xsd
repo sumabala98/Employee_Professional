@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/MainSyste,m" xmlns:tns="http://www.example.org/MainSyste,m" elementFormDefault="qualified" xmlns:Q1="http://www.example.org/Profession" xmlns:Q2="http://www.example.org/PersonalDetails" xmlns:Q3="http://www.example.org/AddressDetails">
+
+    <element name="Document" type="tns:DocumentType"></element>
+    
+    <complexType name="DocumentType">
+    	<sequence>
+    		<element name="Emp_ID" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="EmployeeDetails"
+    			type="tns:EmployeeDetailsType" maxOccurs="1" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="EmployeeDetailsType">
+    	<sequence>
+    		<element name="Professional" type="tns:ProfessionalType" maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="Personal" type="tns:PersonalType" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Address" type="tns:Address_mainType" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Salary" type="tns:SalaryType" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Organization" type="tns:OrganizationType" maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="Insurance" type="tns:InsuranceType" maxOccurs="1" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="ProfessionalType">
+    	<sequence>
+    		<element name="First_Name" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Last_Name" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Email_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Designation" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="DateOfJoining" type="date" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Department" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ReporteingTo" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="AddressType">
+    	<sequence>
+    		<element name="Address1" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Address2" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Street" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="City" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Country" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="PinCode" type="int" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="SalaryType">
+    	<sequence>
+    		<element name="Salary" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Title" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="From_Date" type="date" maxOccurs="1" minOccurs="0"></element>
+    		<element name="To_date" type="date" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="OrganizationType">
+    	<sequence>
+    		<element name="Organization_Name" type="string"></element>
+    		<element name="ORG_Address" type="tns:ORG_ADDRESSType" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="InsuranceType">
+    	<sequence>
+    		<element name="First_Name" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Last_Name" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Insurance_Name" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="DateOfJoining" type="date" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Benefits" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="Personal" type="tns:PersonalType"></element>
+    
+    <complexType name="PersonalType">
+    	<sequence>
+    		<element name="First_Name" type="string"></element>
+    		<element name="Last_Name" type="string"></element>
+    		<element name="Email_ID" type="string"></element>
+    		<element name="Gender" type="string"></element>
+    		<element name="State" type="string"></element>
+    		<element name="Country" type="string"></element>
+    		<element name="DateOfBirth" type="date"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="Professional" type="tns:ProfessionalType"></element>
+
+    <element name="Address" type="tns:AddressType"></element>
+
+    <element name="Organization" type="tns:OrganizationType"></element>
+
+    <element name="Insurance" type="tns:InsuranceType"></element>
+
+    <element name="Salary" type="tns:SalaryType"></element>
+
+
+
+
+
+
+
+
+    <complexType name="Address_mainType">
+    	<sequence>
+    		<element name="isTempAddressSameAsPermanent" type="boolean"
+    			maxOccurs="1" minOccurs="1">
+    		</element>
+    		<element name="Current_Address" type="tns:AddressType"></element>
+    		<element name="Permanent_Address" type="tns:AddressType"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="Main_System_Response"
+    	type="tns:Main_System_ResponseType">
+    </element>
+    
+    <complexType name="Main_System_ResponseType">
+    	<sequence>
+    		<element name="Res_Message" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Res_Code" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ORG_ADDRESSType">
+    	<sequence>
+    		<element name="ORG_ADDRESS1" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ORG_ADDRESS2" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ORG_STREET" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ORG_CITY" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ORG_STATE" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ORG_COUNTRY" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ORG_PINCODE" type="int" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

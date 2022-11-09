@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:Profession="http://www.example.org/Profession" xmlns:Profession_Abstract="http://www.eniquesolutions.com/Profession_Abstract/" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_DRygAE-TEe20kY9kzpCIfw" targetNamespace="http://tns.tibco.com/bw/composite/Emp_Professional" name="Emp_Professional" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_cXnBwFA_Ee294uFvv0EAlw" name="Profession_Abstract" promote="ComponentProcess/Profession_Abstract">
+    <sca:interface.wsdl xmi:id="_cXnBxFA_Ee294uFvv0EAlw" interface="http://www.eniquesolutions.com/Profession_Abstract/#wsdl.interface(Profession_Abstract)" scaext:wsdlLocation="../Service%20Descriptors/Profession_Abstract.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_cXo28FA_Ee294uFvv0EAlw" name="SOAPServiceBinding" targetNamespace="http://www.tibco.com/e3c2611ae8f74797a2657bb1b66861f1/SOAPServiceBinding1" portTypeQName="Profession_Abstract:Profession_Abstract" transportBindingType="HTTP" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/Emp_Professional/Service%20Descriptors/Profession_Abstract.wsdl">
+      <bindingType xmi:id="_cXo28VA_Ee294uFvv0EAlw"/>
+      <inboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_DzDKAFBDEe294uFvv0EAlw" endpointURI="/SOAPServiceBinding/profession_Abstract/" httpConnector="emp_professional.professional"/>
+      <operationConfiguration xmi:id="_cXo28lA_Ee294uFvv0EAlw" operationName="NewOperation" action="NewOperation" actionNeeded="true">
+        <bindingType xmi:id="_cXo281A_Ee294uFvv0EAlw"/>
+        <messageConfiguration xmi:id="_cXo29FA_Ee294uFvv0EAlw" messageQName="Profession_Abstract:NewOperationRequest" wsdlLocation="platform:/resource/Emp_Professional/Service%20Descriptors/Profession_Abstract.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_cXo29VA_Ee294uFvv0EAlw" partName="parameters" partElementName="Profession:Profession"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_cXo29lA_Ee294uFvv0EAlw" messageQName="Profession_Abstract:NewOperationResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/Emp_Professional/Service%20Descriptors/Profession_Abstract.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_cXo291A_Ee294uFvv0EAlw" partName="parameters" partElementName="Profession:Emp_Professional_Res"/>
+        </messageConfiguration>
+        <context xmi:id="_cXo2-FA_Ee294uFvv0EAlw">
+          <inputMapping xmi:id="_cXo2-VA_Ee294uFvv0EAlw"/>
+          <outputMapping xmi:id="_cXo2-lA_Ee294uFvv0EAlw" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_cXo2-1A_Ee294uFvv0EAlw" bindingName="SOAPServiceBinding"/>
+  </sca:service>
+  <sca:property xmi:id="_DmlrUE-TEe20kY9kzpCIfw" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_DmouoE-TEe20kY9kzpCIfw" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_DmouoU-TEe20kY9kzpCIfw" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Dmouok-TEe20kY9kzpCIfw" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Dmx4kE-TEe20kY9kzpCIfw" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Dm0U0E-TEe20kY9kzpCIfw" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Dm3_ME-TEe20kY9kzpCIfw" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Dm7pkE-TEe20kY9kzpCIfw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Dm-s4E-TEe20kY9kzpCIfw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_DbAtcE-TEe20kY9kzpCIfw" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_DbAtcU-TEe20kY9kzpCIfw" processName="emp_professional.Emp_Profession"/>
+    <sca:service xmi:id="_cXmasFA_Ee294uFvv0EAlw" name="Profession_Abstract">
+      <sca:interface.wsdl xmi:id="_cXmasVA_Ee294uFvv0EAlw" interface="http://www.eniquesolutions.com/Profession_Abstract/#wsdl.interface(Profession_Abstract)" scaext:wsdlLocation="../Service%20Descriptors/Profession_Abstract.wsdl"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>
